@@ -1,0 +1,12 @@
+{
+    "name": "alvaro/package",
+    "authors": [
+        {
+            "name": "aeserein",
+            "email": "ae.serein@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^2.0"
+    }
+}

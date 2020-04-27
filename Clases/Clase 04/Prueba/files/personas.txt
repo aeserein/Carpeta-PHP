@@ -1,0 +1,1 @@
+a:4:{i:0;O:7:"Persona":1:{s:6:"nombre";s:4:"Juan";}i:1;O:7:"Persona":1:{s:6:"nombre";s:5:"Cacho";}i:2;O:7:"Persona":1:{s:6:"nombre";s:8:"Castaña";}i:3;O:7:"Persona":1:{s:6:"nombre";s:7:"Donaldo";}}
