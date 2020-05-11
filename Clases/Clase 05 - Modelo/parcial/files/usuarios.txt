@@ -1,0 +1,1 @@
+a:2:{i:0;O:7:"Usuario":6:{s:2:"id";i:1588317505;s:6:"nombre";s:7:"prueba1";s:3:"dni";s:8:"12345678";s:10:"obraSocial";s:6:"123456";s:5:"clave";s:4:"1234";s:4:"tipo";s:4:"user";}i:1;O:7:"Usuario":6:{s:2:"id";i:1588324833;s:6:"nombre";s:5:"MENEM";s:3:"dni";s:8:"12345678";s:10:"obraSocial";s:6:"123456";s:5:"clave";s:4:"1234";s:4:"tipo";s:5:"admin";}}

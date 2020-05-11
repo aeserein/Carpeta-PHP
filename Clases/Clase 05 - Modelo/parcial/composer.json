@@ -1,0 +1,12 @@
+{
+    "name": "alvaro/modelo_parcial",
+    "authors": [
+        {
+            "name": "aeserein",
+            "email": "ae.serein@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^5.2"
+    }
+}
