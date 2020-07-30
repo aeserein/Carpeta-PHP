@@ -1,0 +1,26 @@
+{
+    "name": "alvaro/skeleton",
+    "authors": [
+        {
+            "name": "aeserein",
+            "email": "ae.serein@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.1",
+        "illuminate/database": "^7.17",
+        "illuminate/events": "^7.17",
+        "firebase/php-jwt": "^5.2",
+        "vlucas/phpdotenv": "^5.1"
+    },
+    "autoload" : {
+        "classmap" : [
+            "src/Models",
+            "src/Controllers",
+            "src/Middlewares",
+            "src/Utils",
+            "config"
+        ]
+    }
+}

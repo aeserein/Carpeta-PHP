@@ -1,0 +1,89 @@
+Las bases SQL guardan datos "normalizados"
+Las no SQL guardan datos "desnormalizados"
+Nombres de tablas en snake case y en plural ("unas_palabras")
+Cantidad fija de columnas
+
+id -> PRIMARY y Autoincremental
+nombre -> varchar, tinytext, text, longtext, etc
+        Cambia el espacio que reserva
+legajo -> int
+        5 dígitos
+        Si un campo tiene que ser único, se pone como índice Único
+
+Si hay un campo que puede no ser usado
+    -> predeterminado = NULL
+
+Es bueno poner como índice a una variable que sea única o que sirva para buscar
+    Los índices crean árboles para que la BD busque cosas sin tener que recorrer todos
+    "Único" hace que cuando quiera insertar uno con el campo en el mismo valor se crachee
+
+Tab de Operaciones -> Abajo de todo -> "Vaciar la tabla (TRUNCATE)"
+
+INSERT INTO
+    Si yo pongo todos los campos no hay que declarar las variables en la llamada
+        Si el id es autoincremental y no lo asigno, tengo que declarar el resto
+    
+    INSERT INTO alumnos_utn(`alumno`, `legajo`, `localidad`, `cuatrimestre`) VALUES ("Donaldo", 50, "NY", "Segundo")
+
+UPDATE
+    UPDATE alumnos_utn SET `alumno`="CARLOS SAÚL MENEM",`legajo`=1994 WHERE id=1
+
+DELETE FROM
+    DELETE FROM `alumnos_utn` WHERE id = 1
+
+SELECT
+    SELECT * FROM `alumnos_utn`
+        Sin condición (WHERE) trae todo
+    
+    SELECT * FROM `alumnos_utn` WHERE id = 1
+    SELECT * FROM `alumnos_utn` WHERE legajo > 50
+    SELECT * FROM `alumnos_utn` WHERE localidad LIKE "La RiOjA"
+        Para strings, matchea parecidos
+    SELECT * FROM `alumnos_utn` WHERE localidad LIKE "La %"
+        Para strings, matchea con cualquier cosa que empiece con "La "
+    SELECT * FROM `alumnos_utn` WHERE localidad LIKE "%oja"
+        Para strings, matchea con cualquier cosa que termine con "oja"
+    También se puede poner el comodín de ambos lados "%algo%"
+
+miBaseDeDatos -> Diseñador
+    La tabla tiene que ser Índice
+    Se conecta el id de una tabla con el campo de la tabla principal
+
+Relaciones
+    1 : 1
+    1 : Muchos
+    Muchos : Muchos
+
+Llamada con tablas relacionadas
+
+SELECT [algo]
+FROM [nombre tabla]
+INNER JOIN [la otra tabla] on [primary key] = [foreign key]
+
+SELECT *
+FROM `alumnos_utn`
+INNER JOIN localidades ON localidades.id = alumnos_utn.localidad
+
+SELECT a.alumno, a.legajo, a.localidad, a.cuatrimestre, l.localidad, l.prefijo, l.codigo_postal
+FROM alumnos_utn a
+INNER JOIN localidades l ON l.id = a.localidad
+WHERE a.alumno LIKE "%MENEM%"
+
+SELECT a.alumno, a.legajo, a.localidad, a.cuatrimestre, l.localidad, l.prefijo, l.codigo_postal, c.nombre
+FROM alumnos_utn a
+INNER JOIN localidades l ON l.id = a.localidad
+INNER JOIN cuatrimestres c ON c.id = a.cuatrimestre
+WHERE a.alumno LIKE "%MENEM%"
+
+Los ids índice siempre son id_[aquello a lo que apuntan]
+SELECT *
+FROM materias_alumnos ma
+INNER JOIN materias m ON m.id = ma.materia
+INNER JOIN alumnos_utn a ON a.id = ma.alumno
+INNER JOIN cuatrimestres c ON c.id = ma.cuatrimestre
+
+SELECT a.*, m.materia, c.nombre
+FROM materias_alumnos ma
+INNER JOIN materias m ON m.id = ma.materia
+INNER JOIN alumnos_utn a ON a.id = ma.alumno
+INNER JOIN cuatrimestres c ON c.id = ma.cuatrimestre

@@ -1,0 +1,1 @@
+[{"id":1588396882,"producto":"MEDICAMENTO","marca":"MARCAwatermark","precio":"3","stock":"200","foto":"im\u00e1genes\/1588396882.png"}]

@@ -1,0 +1,6 @@
+1 - Meter una consulta a [localhost/parcial/public/crearTablas] por GET para crear las tablas (Punto 0 en Postman)
+    Esta dirección crea todas las tablas y los campos Veterinario y Cliente para usar por ID en lugar de por string entero
+2 - Los métodos de encriptación requieren instalar librerías.
+    Probé con Sodium y parece ser bastante simple, pero para no requerir que lo instale
+    y no buscar problemas de compatibilidad, o lo que sea, los passwords están "pseudoencriptados" en un JWT.
+    El JWT obviamente no sirve, pero la idea era que haya algún mecanismo de pasar de plain a cipher y viceversa para guardar y leer.
